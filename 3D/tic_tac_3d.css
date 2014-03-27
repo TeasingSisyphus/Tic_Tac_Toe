@@ -1,0 +1,39 @@
+.wrapper {
+	background-color: orange;
+	text-align: center;
+	padding: 80px;
+}
+
+.row {
+	display: block;
+	padding: 25px;
+}
+
+.place {
+	text-align: center;
+	width: 75px;
+	height: 16px;
+	padding: 25px 0;
+	background-color: magenta;
+display: inline-block;
+	vertical-align: top;
+}
+
+.b0 {
+  background-color: blue;
+  margin-bottom: 50px;
+}
+
+.b1 {
+  background-color: red;
+  margin-bottom: 50px;
+}
+.b2 {
+  background-color: green;
+  margin-bottom: 50px;
+}
+
+.b3 {
+  background-color: white;
+  margin-bottom: 50px;
+}

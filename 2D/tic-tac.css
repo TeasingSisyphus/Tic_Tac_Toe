@@ -1,0 +1,20 @@
+.wrapper {
+	background-color: orange;
+	text-align: center;
+	padding: 80px;
+}
+
+.row {
+	display: block;
+	padding: 25px;
+}
+
+.place {
+	text-align: center;
+	width: 75px;
+	height: 16px;
+	padding: 25px 0;
+	background-color: magenta;
+display: inline-block;
+	vertical-align: top;
+}
