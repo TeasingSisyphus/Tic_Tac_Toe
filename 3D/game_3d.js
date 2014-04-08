@@ -1,5 +1,5 @@
 window.onload = function() {
-  alert('loaded!');
+  //alert('loaded!');
   //The template game object
   var Game = function() {
     this.turn = 0;
@@ -244,26 +244,27 @@ window.onload = function() {
     }
 
     //Renders game board base on array
-    /*    this.render = function() {
+    this.render = function() {
       //alert('RENDERIN');
       var self = this;
       $('.place').each(function() {
-          //alert('looping');
-          //Fetches index from place clicked
-          //Fetches board index based on first letter of class
-          if ($(this).prop('class').charAt(0) == 'w') {
-            alert("it's w!");
-            var b_index = 0;
-          } else if ($(this).prop('class').charAt(0) == 'x') {
-            var b_index = 1;
-          } else if ($(this).prop('class').charAt(0) == 'y') {
-            var b_index = 2;
-          } else if ($this).prop('class').charAt(0) == 'z') {
+        //alert('looping');
+        //Fetches index from place clicked
+        //Fetches board index based on first letter of class
+        if ($(this).prop('class').charAt(0) == 'w') {
+          alert("it's w!");
+          var b_index = 0;
+        } else if ($(this).prop('class').charAt(0) == 'x') {
+          var b_index = 1;
+        } else if ($(this).prop('class').charAt(0) == 'y') {
+          var b_index = 2;
+        } else if ($(this).prop('class').charAt(0) == 'z') {
           var b_index = 3;
         }
         alert('mid-loop');
         //raw_index is taken from class of event target, then converted to a row and column indexes
-        var raw_index = $(this).prop('class'); raw_index = raw_index.replace(/[^\d]/g, '');
+        var raw_index = $(this).prop('class');
+        raw_index = raw_index.replace(/[^\d]/g, '');
         var c_index = (parseInt(raw_index) + 3) % 4;
         if (raw_index < 5) {
           var r_index = 0;
@@ -275,9 +276,10 @@ window.onload = function() {
           var r_index = 3;
         }
         //Fills each place with the symbol stored corresonding spot in game.board
-        $(this).text(self.board[b_index][r_index][c_index]); alert('rendered');
+        $(this).text(self.board[b_index][r_index][c_index]);
+        alert('rendered');
       });
-  }*/
+    }
   }
 
 
