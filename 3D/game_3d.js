@@ -244,7 +244,7 @@ window.onload = function() {
     }
 
     //Renders game board base on array
-    this.render = function() {
+    /*this.render = function() {
       //alert('RENDERIN');
       var self = this;
       $('.place').each(function() {
@@ -252,7 +252,7 @@ window.onload = function() {
         //Fetches index from place clicked
         //Fetches board index based on first letter of class
         if ($(this).prop('class').charAt(0) == 'w') {
-          alert("it's w!");
+          //alert("it's w!");
           var b_index = 0;
         } else if ($(this).prop('class').charAt(0) == 'x') {
           var b_index = 1;
@@ -261,7 +261,7 @@ window.onload = function() {
         } else if ($(this).prop('class').charAt(0) == 'z') {
           var b_index = 3;
         }
-        alert('mid-loop');
+        //alert('mid-loop');
         //raw_index is taken from class of event target, then converted to a row and column indexes
         var raw_index = $(this).prop('class');
         raw_index = raw_index.replace(/[^\d]/g, '');
@@ -279,7 +279,7 @@ window.onload = function() {
         $(this).text(self.board[b_index][r_index][c_index]);
         alert('rendered');
       });
-    }
+    }*/
   }
 
 
