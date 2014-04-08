@@ -53,6 +53,27 @@ window.onload = function() {
       this.clear();
     }
 
+    //Checks for win where only board index changes
+    this.check_board = function() {
+      //alert('Checking Rows');
+      for (row = 0; row < 4; row++) {
+        for (column = 0; column < 4; column++) {
+          var count = 0;
+          for (board = 0; board < 3; board++) {
+            if (this.board[board][row][column] != '') {
+              if (this.board[board][row][column] == this.board[board + 1][row][column]) {
+                count++;
+                //alert('row ' + row + ' count ' + count);
+              }
+            }
+            if (count == 3) {
+              this.victory()
+            }
+          }
+        }
+      }
+    }
+
     //Checks each board for a win across one row
     this.check_rows = function() {
       //alert('Checking Rows');
@@ -235,22 +256,24 @@ window.onload = function() {
 
     //Calls all win-checks
     this.check = function() {
-      game.check_rows();
-      game.check_columns();
-      game.check_diag();
-      game.check_board_row();
-      game.check_board_column();
-      game.check_board_row_column();
+      this.check_board();
+      this.check_rows();
+      this.check_columns();
+      this.check_diag();
+      this.check_board_row();
+      this.check_board_column();
+      this.check_board_row_column();
     }
 
     //Renders game board base on array
-    /*this.render = function() {
+    this.render = function() {
       //alert('RENDERIN');
       var self = this;
       $('.place').each(function() {
         //alert('looping');
         //Fetches index from place clicked
         //Fetches board index based on first letter of class
+        alert($(this).prop('class'));
         if ($(this).prop('class').charAt(0) == 'w') {
           //alert("it's w!");
           var b_index = 0;
@@ -279,7 +302,7 @@ window.onload = function() {
         $(this).text(self.board[b_index][r_index][c_index]);
         alert('rendered');
       });
-    }*/
+    }
   }
 
 
