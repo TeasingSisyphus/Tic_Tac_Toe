@@ -265,15 +265,10 @@ window.onload = function() {
       this.check_board_row_column();
     }
 
-    //Renders game board base on array
+    //Renders game game board (html) based on this.board array
     this.render = function() {
-      //alert('RENDERIN');
       var self = this;
       $('.place').each(function() {
-        //alert('looping');
-        //Fetches index from place clicked
-        //Fetches board index based on first letter of class
-        alert($(this).prop('class'));
         if ($(this).prop('class').charAt(0) == 'w') {
           //alert("it's w!");
           var b_index = 0;
@@ -284,7 +279,6 @@ window.onload = function() {
         } else if ($(this).prop('class').charAt(0) == 'z') {
           var b_index = 3;
         }
-        //alert('mid-loop');
         //raw_index is taken from class of event target, then converted to a row and column indexes
         var raw_index = $(this).prop('class');
         raw_index = raw_index.replace(/[^\d]/g, '');
@@ -300,7 +294,6 @@ window.onload = function() {
         }
         //Fills each place with the symbol stored corresonding spot in game.board
         $(this).text(self.board[b_index][r_index][c_index]);
-        alert('rendered');
       });
     }
   }
@@ -349,16 +342,15 @@ window.onload = function() {
       if (game.board[b_index][r_index][c_index] == '') {
 
         //Inserts game.turnsymbol into game.board at the index specified by the place clicked      
-        $(event.target).text(game.turnsymbol);
+        //$(event.target).text(game.turnsymbol);
 
         //Fills board with turn symbol in space referenced by the index
         game.board[b_index][r_index][c_index] = game.turnsymbol;
 
-        //Checks for win, incriments turn and changes turnsymbol
-        //game.render();
+        //Renders new boardstate, checks for win, incriments turn and changes turnsymbol
+        game.render();
         game.check();
         game.turn++;
-        //alert('symbol changin')
         game.turnsymbol = game.symbol[game.turn % 2];
       }
 
@@ -377,4 +369,3 @@ window.onload = function() {
       game.turnsymbol = 'X'
     });
 };
-//BLARG THIS IS A TEST
