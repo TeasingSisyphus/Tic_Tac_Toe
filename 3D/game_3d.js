@@ -311,7 +311,6 @@ window.onload = function() {
 
   //This code stuffs places with symbols then calls the win-checks and incriments the turn
   $('.place').on("click", function() {
-    //alert('Click!');
     //Fetches index from place clicked
     //Fetches board index based on first letter of class
     if ($(event.target).prop('id').charAt(0) == 'w') {
