@@ -143,16 +143,19 @@ window.onload = function() {
         //Checks for diagonal from top right in current board
         if (this.board[board][i][3 - i] != '') {
           if (this.board[board][i][3 - i] == this.board[board][i + 1][2 - i]) {
-            count2++
+            count2++;
           }
         }
       }
+
       if (count1 == 3) {
         this.victory();
       }
+
       if (count2 == 3) {
         this.victory();
       }
+      
     }
   };
 
